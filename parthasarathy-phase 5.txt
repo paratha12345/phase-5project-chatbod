@@ -1,0 +1,20 @@
+
+from flask import Flask, request, jsonify
+import requests
+
+app = Flask(__name__)
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    data = request.get_json()
+    # Extract sender_id and message_text from data
+    # Call Watson Assistant API and generate response_text
+    # Send response_text back to the user using send_message function
+    return "ok", 200
+
+def send_message(sender_id, message_text):
+    # Implement logic to send message_text to the user
+    pass
+
+if __name__ == '__main__':
+    app.run(port=5000)
